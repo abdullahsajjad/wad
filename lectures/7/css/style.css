@@ -1,6 +1,16 @@
 #main {
     /* add CSS here */
+	margin:auto;
+	cursor:pointer;
+	width:500px;
 }
 .pet {
     /* add CSS here */
+	width:400px;
+	height:300px;
+	border-style:dotted;
+	border-width:2px;
+	box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.3);
+
+   
 }
