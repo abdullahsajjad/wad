@@ -26,12 +26,35 @@ var correctAnswers = 0;
 var quizOver = false;
 displayCurrentQuestion();
 document.getElementById("quiz-message").style.display = 'none';
+
 function displayNext() {
     /*Write your code here */
+        if (document.getElementById(questions[currentQuestion].correctAnswer).checked);
+        {
+            correctAnswers++;
+        }
+    currentQuestion++;
+    if(currentQuestion===3){
+        quizOver=true;
+        displayScore();
+    }
+    displayCurrentQuestion();
 }
 
 function displayCurrentQuestion() {
     /*Write your code here */
+    var questionDisplay = document.getElementById("question");
+    questionDisplay.innerHTML=questions[currentQuestion].question;
+    var choicesDisplay = document.getElementById("choice-list");
+    var ul = document.createElement('ul');
+    choicesDisplay.innerHTML="";
+    for(var i =0; i<4;i++){
+        var li = document.createElement('li');
+        li.innerHTML= '<input type="radio" name="radioButton" value="'+i+'" id="'+i+'">'+questions[currentQuestion].choices[i];
+        ul.appendChild(li);
+    }
+    choicesDisplay.appendChild(ul);
+    displayscore();
 }
 
 function resetQuiz() {
